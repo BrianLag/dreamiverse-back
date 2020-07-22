@@ -1,6 +1,6 @@
 const express = require('express');
 const port = 8000;
-
+const api = require('./routes');
 const app = express();
 
 app.use(express.json());
@@ -8,10 +8,11 @@ app.use(express.urlencoded({
   extended: true
 }));
 
+app.use('/', api)
 
 app.get('/', (request,response) => {
   response.send({message: `Hello World`})
-})
+});
 
 
 
