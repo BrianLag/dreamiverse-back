@@ -2,6 +2,9 @@ const express = require('express');
 const port = 8000;
 const api = require('./routes');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({
